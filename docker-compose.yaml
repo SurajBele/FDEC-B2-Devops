@@ -1,0 +1,16 @@
+version: "3"
+services:
+  web:
+    image: httpd
+    ports:
+      - 80:80
+  app:
+    image: surajbele/students:v2
+    ports:
+      - 8080:8080
+  DBserver:
+    image: mariadb
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD = admin123
